@@ -1,9 +1,27 @@
 "use client"
 import React, { useState } from 'react';
 import { PersonalInfoData } from './resume-sections/PersonalInfo';
-import { EducationItem } from './resume-sections/Education';
 import { ExperienceItem } from './resume-sections/Experience';
 import { SkillItem } from './resume-sections/Skills';
+import { EducationItem } from './resume-sections/Education';
+
+interface CourseworkItem {
+  title: string;
+}
+
+interface ProjectItem {
+  title: string;
+  techStack: string[];
+  description: string;
+  date: string;
+}
+
+interface CertificationItem {
+  title: string;
+  provider: string;
+  date: string;
+  description: string;
+}
 
 interface ResumePreviewProps {
   personalInfo: PersonalInfoData;
@@ -11,9 +29,11 @@ interface ResumePreviewProps {
   experience: ExperienceItem[];
   skills: SkillItem[];
   skillCategories: string[];
-  sectionOrder: ('personal' | 'education' | 'experience' | 'skills')[];
+  coursework: CourseworkItem[];
+  projects: ProjectItem[];
+  certifications: CertificationItem[];
+  sectionOrder: ('personal' | 'education' | 'experience' | 'skills' | 'coursework' | 'projects' | 'certifications')[];
 }
-
 const ResumePreview: React.FC<ResumePreviewProps> = ({
   personalInfo,
   education,

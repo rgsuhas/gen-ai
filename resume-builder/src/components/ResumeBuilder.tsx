@@ -6,6 +6,9 @@ import PersonalInfo from './resume-sections/PersonalInfo';
 import Education from './resume-sections/Education';
 import Experience from './resume-sections/Experience';
 import Skills from './resume-sections/Skills';
+import Coursework from './resume-sections/Coursework';
+import Projects from './resume-sections/Projects';
+import Certifications from './resume-sections/Certifications';
 import ResumePreview from './ResumePreview';
 
 export interface PersonalInfoData {
@@ -60,9 +63,42 @@ export interface SkillsData {
   categories: string[];
 }
 
+export interface CourseworkItem {
+  id: string;
+  title: string;
+}
+
+export interface CourseworkData {
+  items: CourseworkItem[];
+}
+
+export interface ProjectItem {
+  id: string;
+  title: string;
+  techStack: string[];
+  description: string;
+  date: string;
+}
+
+export interface ProjectsData {
+  items: ProjectItem[];
+}
+
+export interface CertificationItem {
+  id: string;
+  title: string;
+  provider: string;
+  date: string;
+  description: string;
+}
+
+export interface CertificationsData {
+  items: CertificationItem[];
+}
+
 interface SectionMeta {
   id: string;
-  type: 'personal' | 'education' | 'experience' | 'skills';
+  type: 'personal' | 'education' | 'experience' | 'skills' | 'coursework' | 'projects' | 'certifications';
   title: string;
   isCollapsed: boolean;
 }
@@ -73,6 +109,9 @@ const ResumeBuilder: React.FC = () => {
     { id: 'personal-info', type: 'personal', title: 'Personal Information', isCollapsed: false },
     { id: 'education', type: 'education', title: 'Education', isCollapsed: false },
     { id: 'experience', type: 'experience', title: 'Experience', isCollapsed: false },
+    { id: 'coursework', type: 'coursework', title: 'Relevant Coursework', isCollapsed: false },
+    { id: 'projects', type: 'projects', title: 'Projects', isCollapsed: false },
+    { id: 'certifications', type: 'certifications', title: 'Certifications', isCollapsed: false },
     { id: 'skills', type: 'skills', title: 'Skills', isCollapsed: false },
   ]);
 
@@ -124,6 +163,36 @@ const ResumeBuilder: React.FC = () => {
     categories: ['Technical', 'Soft Skills', 'Languages', 'Tools']
   });
 
+  const [courseworkData, setCourseworkData] = useState<CourseworkData>({
+    items: [
+      { id: 'course-1', title: '' },
+    ]
+  });
+
+  const [projectsData, setProjectsData] = useState<ProjectsData>({
+    items: [
+      {
+        id: 'project-1',
+        title: '',
+        techStack: [],
+        description: '',
+        date: ''
+      },
+    ]
+  });
+
+  const [certificationsData, setCertificationsData] = useState<CertificationsData>({
+    items: [
+      {
+        id: 'cert-1',
+        title: '',
+        provider: '',
+        date: '',
+        description: ''
+      },
+    ]
+  });
+
   // Function to toggle section collapse
   const toggleSectionCollapse = (sectionId: string) => {
     setSections((prevSections) =>
@@ -161,7 +230,10 @@ const ResumeBuilder: React.FC = () => {
       personalInfo.name.trim() !== '' ||
       educationData.items.some((item) => item.institution.trim() !== '') ||
       experienceData.items.some((item) => item.company.trim() !== '') ||
-      skillsData.items.some((item) => item.name.trim() !== '')
+      skillsData.items.some((item) => item.name.trim() !== '') ||
+      courseworkData.items.some((item) => item.title.trim() !== '') ||
+      projectsData.items.some((item) => item.title.trim() !== '') ||
+      certificationsData.items.some((item) => item.title.trim() !== '')
     );
   };
 
@@ -201,6 +273,15 @@ const ResumeBuilder: React.FC = () => {
                       {section.type === 'skills' && (
                         <Skills data={skillsData} onChange={setSkillsData} />
                       )}
+                      {section.type === 'coursework' && (
+                        <Coursework data={courseworkData} onChange={setCourseworkData} />
+                      )}
+                      {section.type === 'projects' && (
+                        <Projects data={projectsData} onChange={setProjectsData} />
+                      )}
+                      {section.type === 'certifications' && (
+                        <Certifications data={certificationsData} onChange={setCertificationsData} />
+                      )}
                     </DraggableSection>
                   ))}
                   {provided.placeholder}
@@ -224,6 +305,9 @@ const ResumeBuilder: React.FC = () => {
                   experience={experienceData.items}
                   skills={skillsData.items}
                   skillCategories={skillsData.categories}
+                  coursework={courseworkData.items}
+                  projects={projectsData.items}
+                  certifications={certificationsData.items}
                   sectionOrder={sections.map((section) => section.type)}
                 />
               ) : (

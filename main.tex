@@ -1,0 +1,189 @@
+%-------------------------
+% Resume in Latex
+% Author : Adapted for Suhas R G
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+%----------FONT OPTIONS----------
+% Uncomment your preferred font option
+% \usepackage[sfdefault]{FiraSans} % sans-serif
+% \usepackage[default]{sourcesanspro} % serif
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    {\Huge \scshape Suhas R G} \\ \vspace{1pt}
+    Bengaluru, Karnataka \\ \vspace{1pt}
+    \small \raisebox{-0.1\height}\faPhone\ +91 6364695019 ~ \href{mailto:rgsuhas6364@gmail.com}{\raisebox{-0.2\height}\faEnvelope\  \underline{rgsuhas6364@gmail.com}} ~ 
+    \href{https://linkedin.com/in/rgsuhas}{\raisebox{-0.2\height}\faLinkedin\ \underline{linkedin.com/in/rgsuhas}}  ~
+    \href{https://github.com/rgsuhas}{\raisebox{-0.2\height}\faGithub\ \underline{github.com/rgsuhas}}
+    \vspace{-8pt}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {HKBK College of Engineering}{Dec. 2022 -- May 2026}
+      {B.E. in Computer Science and Engineering}{Bengaluru, Karnataka}
+  \resumeSubHeadingListEnd
+
+%------RELEVANT COURSEWORK-------
+\section{Relevant Coursework}
+    \begin{multicols}{3}
+        \begin{itemize}[itemsep=-5pt, parsep=3pt]
+            \item Data Structures
+            \item Database Management
+            \item Algorithms Analysis
+            \item Machine Learning
+            \item Artificial Intelligence
+            \item Data Science
+            \item Statistics
+            \item Software Methodology
+        \end{itemize}
+    \end{multicols}
+    \vspace*{2.0\multicolsep}
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Data Analytics Job Simulation}{Nov 2024 -- Dec 2024}
+      {TATA, Forage}{Remote}
+      \resumeItemListStart
+        \resumeItem{Completed a comprehensive data analysis project focusing on real-world applications of data processing and visualization.}
+        \resumeItem{Demonstrated skills in data cleaning, data visualization, and report presentation.}
+        \resumeItem{Tools Used: MS Excel, Power BI, MySQL.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Data Science Internship}{Jan 2025 -- Present}
+      {Saara Inc}{Bangalore}
+      \resumeItemListStart
+        \resumeItem{Assisting in collecting, cleaning, and preprocessing data for analysis.}
+        \resumeItem{Developing predictive models and implementing machine learning algorithms.}
+        \resumeItem{Collaborating with cross-functional teams to deliver data-driven solutions.}
+        \resumeItem{Tools Used: Python, R, SQL, Tableau, Power BI.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+     \resumeProjectHeading
+          {\textbf{Drive Downloader} $|$ \emph{Go, Google Drive API, OAuth2}}{Nov 2024}
+          \resumeItemListStart
+            \resumeItem{Developed a command-line tool to interact with Google Drive, enabling automated file downloads.}
+            \resumeItem{Integrated OAuth2 and service account authentication for user and automated access.}
+            \resumeItem{Implemented file listing and filtering capabilities with metadata support.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Image Filter Application} $|$ \emph{Python, Streamlit, OpenCV}}{Dec 2024}
+          \resumeItemListStart
+            \resumeItem{Created a web app to apply artistic filters to images, enhancing user interactivity and usability.}
+            \resumeItem{Implemented dark and light modes for accessibility and visual appeal.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python, R, SQL, Go, JavaScript, C} \\
+     \textbf{Tools}{: MS Excel, Tableau, Power BI, Streamlit, Docker, Postman, gRPC} \\
+     \textbf{Technologies}{: Machine Learning, Data Cleaning, Data Visualization, Predictive Modeling, Agile (Scrum)} \\
+    }}
+ \end{itemize}
+
+%-----------COURSES AND CERTIFICATIONS-----------
+\section{Courses and Certifications}
+    \resumeSubHeadingListStart
+        \resumeSubheading{Google Data Analytics Professional Certificate}{Jun 2024}{Coursera}{Verified by Google}
+            \resumeItemListStart
+                \resumeItem{Completed 8 courses covering data preparation, cleaning, visualization, and analysis.}
+                \resumeItem{Tools Proficiency: Spreadsheets, SQL, Tableau, R Programming.}
+                \resumeItem{Capstone: Completed a case study demonstrating data-driven decision-making.}
+            \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+\end{document}

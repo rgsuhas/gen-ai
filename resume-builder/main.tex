@@ -1,6 +1,6 @@
 %-------------------------
 % Resume in Latex
-% Author : Adapted for Suhas R G
+% Author : Jake Gutierrez
 % Based off of: https://github.com/sb2nov/resume
 % License : MIT
 %------------------------
@@ -24,10 +24,18 @@
 \setlength{\columnsep}{-1pt}
 \input{glyphtounicode}
 
+
 %----------FONT OPTIONS----------
-% Uncomment your preferred font option
-% \usepackage[sfdefault]{FiraSans} % sans-serif
-% \usepackage[default]{sourcesanspro} % serif
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -64,11 +72,24 @@
   }
 }
 
+\newcommand{\classesList}[4]{
+    \item\small{
+        {#1 #2 #3 #4 \vspace{-2pt}}
+  }
+}
+
 \newcommand{\resumeSubheading}[4]{
   \vspace{-2pt}\item
     \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & \textbf{\small #2} \\
       \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
     \end{tabular*}\vspace{-7pt}
 }
 
@@ -79,111 +100,138 @@
     \end{tabular*}\vspace{-7pt}
 }
 
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
 \begin{document}
 
 %----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
 \begin{center}
     {\Huge \scshape Suhas R G} \\ \vspace{1pt}
     Bengaluru, Karnataka \\ \vspace{1pt}
-    \small \raisebox{-0.1\height}\faPhone\ +91 6364695019 ~ \href{mailto:rgsuhas6364@gmail.com}{\raisebox{-0.2\height}\faEnvelope\  \underline{rgsuhas6364@gmail.com}} ~ 
-    \href{https://linkedin.com/in/rgsuhas}{\raisebox{-0.2\height}\faLinkedin\ \underline{linkedin.com/in/rgsuhas}}  ~
-    \href{https://github.com/rgsuhas}{\raisebox{-0.2\height}\faGithub\ \underline{github.com/rgsuhas}}
+    \small \raisebox{-0.1\height}\faPhone\ +91 6364695019 ~ \href{mailto:x@gmail.com}{\raisebox{-0.2\height}\faEnvelope\  \underline{rgsuhas6364@gmail.com}} ~ 
+    \href{https://linkedin.com/in//}{\raisebox{-0.2\height}\faLinkedin\ \underline{linkedin.com/in/rgsuhas}}  ~
+    \href{https://github.com/}{\raisebox{-0.2\height}\faGithub\ \underline{github.com/rgsuhas}}
     \vspace{-8pt}
 \end{center}
+
 
 %-----------EDUCATION-----------
 \section{Education}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {HKBK College of Engineering}{Dec. 2022 -- May 2026}
-      {B.E. in Computer Science and Engineering}{Bengaluru, Karnataka}
+      {HKBK Collge of Engineering}{Dec. 2022 -- May 2026}
+      {Computer Science and Engineering}{Bengaluru, Karnataka}
   \resumeSubHeadingListEnd
 
 %------RELEVANT COURSEWORK-------
 \section{Relevant Coursework}
-    \begin{multicols}{3}
-        \begin{itemize}[itemsep=-5pt, parsep=3pt]
-            \item Data Structures
-            \item Database Management
-            \item Algorithms Analysis
-            \item Machine Learning
-            \item Artificial Intelligence
-            \item Data Science
-            \item Statistics
-            \item Software Methodology
-        \end{itemize}
-    \end{multicols}
-    \vspace*{2.0\multicolsep}
+    %\resumeSubHeadingListStart
+        \begin{multicols}{4}
+            \begin{itemize}[itemsep=-5pt, parsep=3pt]
+                \item\small Data Structures
+                \item Software Methodology
+                \item Algorithms Analysis
+                \item Database Management
+                \item Artificial Intelligence
+                \item Computer Networks
+                \item Project Management
+                \item OOPs with Java
+                \item Computer Architecture
+            \end{itemize}
+        \end{multicols}
+        \vspace*{2.0\multicolsep}
+    %\resumeSubHeadingListEnd
+
 
 %-----------EXPERIENCE-----------
 \section{Experience}
   \resumeSubHeadingListStart
 
     \resumeSubheading
-      {Data Analytics Job Simulation}{Nov 2024 -- Dec 2024}
-      {TATA, Forage}{Remote}
+      {Open CLM}{October 2024 - Present}
+      {Software Engineer}{Bengaluru, Karnataka}
       \resumeItemListStart
-        \resumeItem{Completed a comprehensive data analysis project focusing on real-world applications of data processing and visualization.}
-        \resumeItem{Demonstrated skills in data cleaning, data visualization, and report presentation.}
-        \resumeItem{Tools Used: MS Excel, Power BI, MySQL.}
+        \resumeItem{Designed and implemented a \textbf{Git-service} for managing user files, ensuring seamless interaction across the stack. }
+        \resumeItem{Developed scalable \textbf{gRPC APIs} to enable communication between the backend and other services in a distributed system. }
+        \resumeItem{Integrated backend APIs with a \textbf{React-based web application}, optimizing frontend-backend communication for a user-centric experience. }
+        \resumeItem{Wrote \textbf{GitHub workflows} to streamline CI/CD processes, enhancing deployment efficiency. Learned and applied \textbf{Git and GitHub} best practices for version control and collaboration.}
+    \resumeItem{ Actively participated in \textbf{Scrum ceremonies} and worked in \textbf{sprint-based} cycles to deliver features in a fast-paced environment.}
+    \resumeItem{Collaborated in a \textbf{cross-functional team} of 5, driving the project from concept to MVP.  }
       \resumeItemListEnd
-
-    \resumeSubheading
-      {Data Science Internship}{Jan 2025 -- Present}
-      {Saara Inc}{Bangalore}
-      \resumeItemListStart
-        \resumeItem{Assisting in collecting, cleaning, and preprocessing data for analysis.}
-        \resumeItem{Developing predictive models and implementing machine learning algorithms.}
-        \resumeItem{Collaborating with cross-functional teams to deliver data-driven solutions.}
-        \resumeItem{Tools Used: Python, R, SQL, Tableau, Power BI.}
-      \resumeItemListEnd
-
+\textbf{Technical Stack}: Golang (Go), gRPC, REST APIs, React.js, Microservices, Git/GitHub,  Agile (Scrum, Sprints) .
   \resumeSubHeadingListEnd
+\vspace{-16pt}
 
 %-----------PROJECTS-----------
 \section{Projects}
+    \vspace{-5pt}
     \resumeSubHeadingListStart
      \resumeProjectHeading
-          {\textbf{Drive Downloader} $|$ \emph{Go, Google Drive API, OAuth2}}{Nov 2024}
+          {\textbf{Image Filter Application} $|$ \emph{Python, Streamlit, OpenCV}}{December 2024}
           \resumeItemListStart
-            \resumeItem{Developed a command-line tool to interact with Google Drive, enabling automated file downloads.}
-            \resumeItem{Integrated OAuth2 and service account authentication for user and automated access.}
-            \resumeItem{Implemented file listing and filtering capabilities with metadata support.}
+            \resumeItem{Developed a Streamlit-based web application that allows users to upload images and apply artistic filters such as watercolor sketch, pencil sketch, cartoon, sepia, HDR, and sharpening.}
+            \resumeItem{Implemented dark and light modes to improve accessibility and enhance user experience.}
+            \resumeItem{Deployed the application on the Streamlit platform, enabling seamless and user-friendly access.}
+            \resumeItem{Utilized OpenCV for efficient image processing and incorporated interactive features for a streamlined user workflow.}
           \resumeItemListEnd
+          \vspace{-13pt}
 
       \resumeProjectHeading
-          {\textbf{Image Filter Application} $|$ \emph{Python, Streamlit, OpenCV}}{Dec 2024}
+          {\textbf{Drive Downloader} $|$ \emph{Go, Google Drive API, OAuth2}}{November 2024}
           \resumeItemListStart
-            \resumeItem{Created a web app to apply artistic filters to images, enhancing user interactivity and usability.}
-            \resumeItem{Implemented dark and light modes for accessibility and visual appeal.}
+            \resumeItem{Developed a Go-based command-line tool to interact with Google Drive, enabling users or service accounts to download files and folders seamlessly.}
+            \resumeItem{Implemented OAuth2 authentication for user-based access and service account authentication for automated scripts and background processes.}
+            \resumeItem{Provided file and folder listing functionality with filtering options based on file type, name, and metadata.}
+            \resumeItem{Integrated error handling mechanisms to manage permission and access issues effectively.}
+            \resumeItem{Designed the tool for automation and scalability, making it suitable for background processes and large-scale file management in Google Drive.}
           \resumeItemListEnd
+     % --------new projects here-------------     
     \resumeSubHeadingListEnd
+\vspace{-15pt}
 
-%-----------TECHNICAL SKILLS-----------
+
+%
+%-----------PROGRAMMING SKILLS-----------
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Languages}{: Python, R, SQL, Go, JavaScript, C} \\
-     \textbf{Tools}{: MS Excel, Tableau, Power BI, Streamlit, Docker, Postman, gRPC} \\
-     \textbf{Technologies}{: Machine Learning, Data Cleaning, Data Visualization, Predictive Modeling, Agile (Scrum)} \\
+     \textbf{Languages}{: Go (Golang), Python, JavaScript, HTML/CSS, SQL, C} \\
+     \textbf{Developer Tools}{: VS Code, Git, GitHub, Docker, Streamlit, Postman, gRPC, Google Cloud Platform} \\
+     \textbf{Technologies/Frameworks}{: React.js, Linux, Microservices, Jenkins, CI/CD, Agile (Scrum, Sprints), OpenCV} \\
     }}
  \end{itemize}
+ \vspace{-16pt}
 
-%-----------COURSES AND CERTIFICATIONS-----------
-\section{Courses and Certifications}
+
+%-----------INVOLVEMENT---------------
+\section{Courses and Certificates}
     \resumeSubHeadingListStart
-        \resumeSubheading{Google Data Analytics Professional Certificate}{Jun 2024}{Coursera}{Verified by Google}
+        \resumeSubheading{Web Development Course}{Nov 2024 -- Present}{By: Hithesh Chooudery on Udemy}{}
             \resumeItemListStart
-                \resumeItem{Completed 8 courses covering data preparation, cleaning, visualization, and analysis.}
-                \resumeItem{Tools Proficiency: Spreadsheets, SQL, Tableau, R Programming.}
-                \resumeItem{Capstone: Completed a case study demonstrating data-driven decision-making.}
+                \resumeItem{Gained proficiency in full-stack development, covering HTML, CSS, Tailwind, Node.js, React, MongoDB, Prisma, and deployment techniques.}
+                \resumeItem{Mastered the JavaScript ecosystem and its frameworks to build scalable and efficient web applications.}
+                \resumeItem{Developed skills to create and manage projects as a full-stack developer for companies or freelance opportunities.}
+                \resumeItem{Explored advanced topics such as MERN stack, Git, and modern web development practices.}
             \resumeItemListEnd
+        
     \resumeSubHeadingListEnd
+
 
 \end{document}
